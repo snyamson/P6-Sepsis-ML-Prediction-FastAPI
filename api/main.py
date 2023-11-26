@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-
-from v1.api_v1 import router as v1_router
+from api import api_v1
 
 # Fast API Instance
 app = FastAPI()
@@ -13,4 +12,4 @@ async def home():
 
 
 # Include the api version 1
-app.include_router(router=v1_router, prefix="/api/v1")
+app.include_router(router=api_v1.router, prefix="/api/v1")
